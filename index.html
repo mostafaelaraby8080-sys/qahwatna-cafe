@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>قهوتنا | كافيه بطعم البيت</title>
+  <meta name="description" content="قهوتنا - كافيه يقدم أجود أنواع القهوة والحلويات في أجواء دافئة وهادئة">
+
+  <!-- خطوط عربية عصرية من Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@500;700;800&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Bootstrap 5 (RTL) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+  <!-- ملف التنسيقات الخاص بالموقع -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-theme="light">
+
+  <!-- ===================== الرأس (Header) ===================== -->
+  <header class="site-header sticky-top">
+    <nav class="navbar navbar-expand-lg py-3">
+      <div class="container">
+
+        <!-- الشعار -->
+        <a class="navbar-brand brand-logo" href="index.html">
+          <i class="bi bi-cup-hot-fill brand-icon"></i>
+          قهوتنا
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="فتح القائمة">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="mainNavbar">
+          <!-- قائمة التنقل الرئيسية -->
+          <ul class="navbar-nav mx-auto text-center">
+            <li class="nav-item"><a class="nav-link nav-link-custom active" href="index.html">الرئيسية</a></li>
+            <li class="nav-item"><a class="nav-link nav-link-custom" href="#about">من نحن</a></li>
+            <li class="nav-item"><a class="nav-link nav-link-custom" href="#testimonials">آراء العملاء</a></li>
+            <li class="nav-item"><a class="nav-link nav-link-custom" href="menu.html">قائمة المشروبات</a></li>
+            <li class="nav-item"><a class="nav-link nav-link-custom" href="#contact">تواصل معنا</a></li>
+          </ul>
+
+          <div class="d-flex align-items-center gap-2 justify-content-center mt-3 mt-lg-0">
+            <!-- زر تبديل الوضع الليلي / النهاري -->
+            <button id="themeToggleBtn" class="theme-toggle-btn" aria-label="تبديل الوضع الليلي والنهاري" title="تبديل الوضع">
+              <i class="bi bi-moon-stars-fill" id="themeIcon"></i>
+            </button>
+            <a href="#contact" class="btn btn-coffee">احجز الآن</a>
+          </div>
+        </div>
+
+      </div>
+    </nav>
+  </header>
+
+  <!-- ===================== قسم الترحيب (Hero) ===================== -->
+  <section class="hero-section">
+    <div class="hero-pattern"></div>
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-7 hero-content">
+          <span class="section-eyebrow">أهلاً بك في قهوتنا</span>
+          <h1 class="hero-title mt-2">فنجان قهوة يشبهك،<br>في مكان يشبه بيتك</h1>
+          <p class="hero-subtitle">
+            نحمص حبوبنا يوميًا ونقدّمها في أجواء دافئة تجمع بين رائحة القهوة الطازجة
+            وهدوء الجلسة الطويلة. سواء كنت تبحث عن لحظة صفاء أو لقاء مع الأصدقاء، طاولتك بانتظارك.
+          </p>
+          <div class="d-flex flex-wrap gap-3">
+            <a href="#contact" class="btn btn-coffee btn-lg">
+              <i class="bi bi-calendar-check ms-1"></i> احجز الآن
+            </a>
+            <a href="menu.html" class="btn btn-outline-light btn-lg">
+              <i class="bi bi-cup-straw ms-1"></i> تصفح القائمة
+            </a>
+          </div>
+        </div>
+
+        <!-- زخرفة بصرية (أيقونة فنجان كبيرة) بدلاً من صورة خارجية -->
+        <div class="col-lg-5 d-none d-lg-flex justify-content-center hero-cup-decor">
+          <i class="bi bi-cup-hot-fill" style="font-size: 14rem; color: rgba(243,233,218,0.18);"></i>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== قسم من نحن (About) ===================== -->
+  <section id="about" class="about-section">
+    <div class="container">
+      <div class="row align-items-center g-5">
+
+        <!-- الجانب البصري -->
+        <div class="col-lg-5">
+          <div class="about-visual">
+            <div class="row g-3">
+              <div class="col-6">
+                <div class="stat-card">
+                  <div class="stat-number">12</div>
+                  <div class="text-muted-custom small">عامًا من الخبرة</div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="stat-card">
+                  <div class="stat-number">+40</div>
+                  <div class="text-muted-custom small">نوع مشروب وحلى</div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="stat-card">
+                  <div class="stat-number">100%</div>
+                  <div class="text-muted-custom small">حبوب طبيعية</div>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="stat-card">
+                  <div class="stat-number">+15</div>
+                  <div class="text-muted-custom small">ألف عميل سعيد</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- النص والمميزات -->
+        <div class="col-lg-7">
+          <span class="section-eyebrow">قصتنا</span>
+          <h2 class="section-title">قهوة تُحكى قصتها قبل أن تُشرب</h2>
+          <p class="section-lead mb-4">
+            بدأت "قهوتنا" كركن صغير بهدف بسيط: تقديم فنجان قهوة صادق، بلا تعقيد وبلا استعجال.
+            اليوم، كبرنا لكننا حافظنا على الفكرة نفسها؛ نختار حبوبنا بعناية، ونحمصها بأنفسنا،
+            ونستقبل كل زائر وكأنه ضيف في بيتنا.
+          </p>
+
+          <div class="feature-item">
+            <div class="feature-icon"><i class="bi bi-award"></i></div>
+            <div>
+              <h5 class="mb-1">حبوب مختارة بعناية</h5>
+              <p class="text-muted-custom mb-0">نستورد حبوبنا من مزارع موثوقة ونحمصها طازجة كل أسبوع.</p>
+            </div>
+          </div>
+
+          <div class="feature-item">
+            <div class="feature-icon"><i class="bi bi-people"></i></div>
+            <div>
+              <h5 class="mb-1">أجواء تناسب الجميع</h5>
+              <p class="text-muted-custom mb-0">مساحات هادئة للعمل، وزوايا دافئة للقاءات العائلية والأصدقاء.</p>
+            </div>
+          </div>
+
+          <div class="feature-item">
+            <div class="feature-icon"><i class="bi bi-clock-history"></i></div>
+            <div>
+              <h5 class="mb-1">خدمة سريعة وصادقة</h5>
+              <p class="text-muted-custom mb-0">نحترم وقتك، ونحرص أن يصل فنجانك ساخنًا وطازجًا دائمًا.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== قسم آراء العملاء (Testimonials) ===================== -->
+  <section id="testimonials" class="testimonials-section">
+    <div class="container">
+      <div class="text-center mx-auto mb-5" style="max-width: 640px;">
+        <span class="section-eyebrow">آراء عملائنا</span>
+        <h2 class="section-title">ما الذي يقوله ضيوفنا عنّا</h2>
+        <p class="section-lead mx-auto">لا شيء يسعدنا أكثر من رضا من يزورنا، وهذه بعض كلماتهم.</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="testimonial-card">
+            <i class="bi bi-quote testimonial-quote-icon"></i>
+            <p class="my-3">
+              أفضل قهوة اختصاص جربتها في المدينة. الأجواء هادئة جدًا وممتازة للعمل، وطاقم العمل ودود ومحترف.
+            </p>
+            <div class="rating-stars mb-3">★★★★★</div>
+            <div class="d-flex align-items-center gap-3">
+              <div class="testimonial-avatar">س</div>
+              <div>
+                <h6 class="mb-0">سارة العتيبي</h6>
+                <small class="text-muted-custom">زائرة دائمة</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="testimonial-card">
+            <i class="bi bi-quote testimonial-quote-icon"></i>
+            <p class="my-3">
+              اللاتيه هنا مختلف تمامًا، وحلى التيراميسو لا يُقاوم. أصبح مكاني المفضل لاجتماعات العمل.
+            </p>
+            <div class="rating-stars mb-3">★★★★★</div>
+            <div class="d-flex align-items-center gap-3">
+              <div class="testimonial-avatar">م</div>
+              <div>
+                <h6 class="mb-0">محمد الحربي</h6>
+                <small class="text-muted-custom">رائد أعمال</small>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="testimonial-card">
+            <i class="bi bi-quote testimonial-quote-icon"></i>
+            <p class="my-3">
+              التصميم دافئ ومريح، والقهوة تستحق كل ريال. أنصح به بشدة لكل محبي القهوة المختصة.
+            </p>
+            <div class="rating-stars mb-3">★★★★☆</div>
+            <div class="d-flex align-items-center gap-3">
+              <div class="testimonial-avatar">ن</div>
+              <div>
+                <h6 class="mb-0">نورة القحطاني</h6>
+                <small class="text-muted-custom">مصممة جرافيك</small>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== قسم التواصل / الحجز (Contact) ===================== -->
+  <section id="contact" class="contact-section">
+    <div class="container">
+      <div class="row g-5 align-items-start">
+
+        <div class="col-lg-5">
+          <span class="section-eyebrow">تواصل معنا</span>
+          <h2 class="section-title">احجز طاولتك أو راسلنا</h2>
+          <p class="section-lead mb-4">
+            يسعدنا استقبال استفساراتك وحجوزاتك، عبئ النموذج وسنعاود التواصل معك خلال ساعات العمل.
+          </p>
+
+          <div class="d-flex align-items-center gap-3 mb-3">
+            <div class="feature-icon"><i class="bi bi-geo-alt"></i></div>
+            <div>شارع الأمير سلطان، حي الروضة</div>
+          </div>
+          <div class="d-flex align-items-center gap-3 mb-3">
+            <div class="feature-icon"><i class="bi bi-telephone"></i></div>
+            <div dir="ltr" class="text-end">+966 50 123 4567</div>
+          </div>
+          <div class="d-flex align-items-center gap-3">
+            <div class="feature-icon"><i class="bi bi-clock"></i></div>
+            <div>يوميًا: 7 صباحًا - 12 منتصف الليل</div>
+          </div>
+        </div>
+
+        <div class="col-lg-7">
+          <!-- نموذج الحجز/التواصل مع تحقق JavaScript -->
+          <form id="contactForm" novalidate>
+            <div class="row g-3">
+
+              <div class="col-md-6">
+                <label for="fullName" class="form-label">الاسم الكامل</label>
+                <input type="text" class="form-control form-control-coffee" id="fullName" placeholder="اسمك الكامل">
+                <div class="invalid-feedback-custom" id="fullNameError">الرجاء إدخال اسمك الكامل (حرفان على الأقل).</div>
+              </div>
+
+              <div class="col-md-6">
+                <label for="phone" class="form-label">رقم الجوال</label>
+                <input type="tel" class="form-control form-control-coffee" id="phone" placeholder="05xxxxxxxx" dir="ltr">
+                <div class="invalid-feedback-custom" id="phoneError">الرجاء إدخال رقم جوال صحيح (10 أرقام).</div>
+              </div>
+
+              <div class="col-md-6">
+                <label for="email" class="form-label">البريد الإلكتروني</label>
+                <input type="email" class="form-control form-control-coffee" id="email" placeholder="example@email.com" dir="ltr">
+                <div class="invalid-feedback-custom" id="emailError">الرجاء إدخال بريد إلكتروني صحيح.</div>
+              </div>
+
+              <div class="col-md-6">
+                <label for="guests" class="form-label">عدد الأشخاص</label>
+                <input type="number" class="form-control form-control-coffee" id="guests" placeholder="مثال: 2" min="1" max="20">
+                <div class="invalid-feedback-custom" id="guestsError">الرجاء إدخال عدد صحيح بين 1 و20.</div>
+              </div>
+
+              <div class="col-12">
+                <label for="message" class="form-label">رسالتك</label>
+                <textarea class="form-control form-control-coffee" id="message" rows="4" placeholder="اكتب طلبك أو استفسارك هنا..."></textarea>
+                <div class="invalid-feedback-custom" id="messageError">الرجاء كتابة رسالة لا تقل عن 10 أحرف.</div>
+              </div>
+
+              <div class="col-12">
+                <button type="submit" class="btn btn-coffee w-100 w-md-auto">
+                  <i class="bi bi-send ms-1"></i> إرسال الطلب
+                </button>
+              </div>
+
+              <div class="col-12">
+                <div class="form-success-msg" id="formSuccessMsg">
+                  <i class="bi bi-check-circle-fill ms-1"></i>
+                  شكرًا لك! تم استلام طلبك وسنتواصل معك قريبًا.
+                </div>
+              </div>
+
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== التذييل (Footer) ===================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-4">
+
+        <div class="col-lg-4">
+          <div class="brand-logo mb-3" style="color:#FFF6EA;">
+            <i class="bi bi-cup-hot-fill brand-icon"></i>
+            قهوتنا
+          </div>
+          <p class="text-muted-custom" style="color:#C6B7A6;">
+            وجهتك اليومية لفنجان قهوة أصيل، في أجواء دافئة تجمعك بمن تحب.
+          </p>
+          <div class="d-flex gap-2 mt-3">
+            <a href="#" class="social-icon" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="social-icon" aria-label="Twitter / X"><i class="bi bi-twitter-x"></i></a>
+            <a href="#" class="social-icon" aria-label="Snapchat"><i class="bi bi-snapchat"></i></a>
+            <a href="#" class="social-icon" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-4">
+          <h6 class="footer-title">روابط سريعة</h6>
+          <a href="index.html" class="footer-link">الرئيسية</a>
+          <a href="#about" class="footer-link">من نحن</a>
+          <a href="menu.html" class="footer-link">القائمة</a>
+          <a href="#contact" class="footer-link">تواصل معنا</a>
+        </div>
+
+        <div class="col-lg-3 col-md-4">
+          <h6 class="footer-title">ساعات العمل</h6>
+          <p class="footer-link mb-1">السبت - الخميس: 7ص - 12م</p>
+          <p class="footer-link">الجمعة: 2ظ - 12م</p>
+        </div>
+
+        <div class="col-lg-3 col-md-4">
+          <h6 class="footer-title">تواصل معنا</h6>
+          <p class="footer-link mb-1"><i class="bi bi-geo-alt ms-1"></i> حي الروضة، الرياض</p>
+          <p class="footer-link mb-1" dir="ltr"><i class="bi bi-telephone ms-1"></i> +966 50 123 4567</p>
+          <p class="footer-link" dir="ltr"><i class="bi bi-envelope ms-1"></i> hello@qahwatuna.sa</p>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom text-center">
+        &copy; <span id="currentYear"></span> قهوتنا. جميع الحقوق محفوظة.
+      </div>
+    </div>
+  </footer>
+
+  <!-- زر العودة لأعلى الصفحة -->
+  <button id="scrollTopBtn" class="scroll-top-btn" aria-label="العودة لأعلى الصفحة">
+    <i class="bi bi-arrow-up"></i>
+  </button>
+
+  <!-- مكتبة Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- ملف الجافاسكريبت الخاص بالموقع -->
+  <script src="script.js"></script>
+</body>
+</html>
