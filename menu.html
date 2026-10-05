@@ -5,40 +5,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>قائمة المشروبات | قهوتنا</title>
   <meta name="description" content="تصفح قائمة المشروبات والحلويات في كافيه قهوتنا">
+  <meta name="theme-color" content="#6f4e37">
 
-  <!-- خطوط عربية عصرية من Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@500;700;800&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@500;600;700;800&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
 
-  <!-- Bootstrap 5 (RTL) -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
-
-  <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-
-  <!-- ملف التنسيقات الخاص بالموقع -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body data-theme="light">
+  <a class="skip-link" href="#mainContent">تخطَّ إلى المحتوى</a>
 
-  <!-- ===================== الرأس (Header) ===================== -->
   <header class="site-header sticky-top">
     <nav class="navbar navbar-expand-lg py-3">
       <div class="container">
-
         <a class="navbar-brand brand-logo" href="index.html">
-          <i class="bi bi-cup-hot-fill brand-icon"></i>
+          <span class="brand-mark"><i class="bi bi-cup-hot-fill"></i></span>
           قهوتنا
         </a>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="فتح القائمة">
-          <span class="navbar-toggler-icon"></span>
+        <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar" aria-controls="mainNavbar" aria-expanded="false" aria-label="فتح القائمة">
+          <span></span>
+          <span></span>
+          <span></span>
         </button>
 
         <div class="collapse navbar-collapse" id="mainNavbar">
           <ul class="navbar-nav mx-auto text-center">
             <li class="nav-item"><a class="nav-link nav-link-custom" href="index.html">الرئيسية</a></li>
             <li class="nav-item"><a class="nav-link nav-link-custom" href="index.html#about">من نحن</a></li>
+            <li class="nav-item"><a class="nav-link nav-link-custom" href="index.html#featured">مختاراتنا</a></li>
             <li class="nav-item"><a class="nav-link nav-link-custom" href="index.html#testimonials">آراء العملاء</a></li>
             <li class="nav-item"><a class="nav-link nav-link-custom active" href="menu.html">قائمة المشروبات</a></li>
             <li class="nav-item"><a class="nav-link nav-link-custom" href="index.html#contact">تواصل معنا</a></li>
@@ -48,267 +46,251 @@
             <button id="themeToggleBtn" class="theme-toggle-btn" aria-label="تبديل الوضع الليلي والنهاري" title="تبديل الوضع">
               <i class="bi bi-moon-stars-fill" id="themeIcon"></i>
             </button>
-            <a href="index.html#contact" class="btn btn-coffee">احجز الآن</a>
+            <a href="index.html#contact" class="btn btn-coffee">احجز طاولتك</a>
           </div>
         </div>
-
       </div>
     </nav>
   </header>
 
-  <!-- ===================== رأس صفحة القائمة ===================== -->
-  <section class="menu-hero">
-    <div class="container">
-      <span class="section-eyebrow" style="color:#E8D5B5;">قائمتنا</span>
-      <h1 class="section-title mt-2" style="color:#FFF6EA;">مشروبات وحلويات لكل الأذواق</h1>
-      <p class="mx-auto" style="max-width:560px; color:#E8D5B5;">
-        من إسبريسو غني إلى مشروبات باردة منعشة، وحلويات محضّرة يوميًا داخل الكافيه.
-      </p>
-    </div>
-  </section>
-
-  <!-- ===================== قسم القائمة (Menu Grid) ===================== -->
-  <section class="menu-section py-5">
-    <div class="container">
-
-      <!-- أزرار تصفية الأقسام -->
-      <div class="d-flex flex-wrap justify-content-center gap-2 mb-5" id="menuFilters">
-        <button class="menu-filter-btn active" data-filter="all">الكل</button>
-        <button class="menu-filter-btn" data-filter="hot">مشروبات ساخنة</button>
-        <button class="menu-filter-btn" data-filter="cold">مشروبات باردة</button>
-        <button class="menu-filter-btn" data-filter="dessert">حلويات</button>
+  <main id="mainContent">
+    <section class="menu-hero">
+      <div class="container">
+        <nav class="menu-breadcrumb" aria-label="مسار التنقل">
+          <a href="index.html">الرئيسية</a>
+          <span>/</span>
+          <span>القائمة</span>
+        </nav>
+        <span class="section-eyebrow menu-hero-eyebrow">قائمتنا</span>
+        <h1 class="section-title mt-2 menu-hero-title">مشروبات وحلويات لكل الأذواق</h1>
+        <p class="menu-hero-lead">
+          من إسبريسو غني إلى مشروبات باردة منعشة، وحلويات تُحضَّر يوميًا داخل الكافيه.
+        </p>
       </div>
+    </section>
 
-      <!-- شبكة المنتجات -->
-      <div class="row g-4" id="menuGrid">
+    <section class="menu-section py-5">
+      <div class="container">
+        <div class="menu-filters" id="menuFilters" role="tablist" aria-label="تصفية القائمة">
+          <button class="menu-filter-btn active" data-filter="all" type="button">الكل</button>
+          <button class="menu-filter-btn" data-filter="hot" type="button">مشروبات ساخنة</button>
+          <button class="menu-filter-btn" data-filter="cold" type="button">مشروبات باردة</button>
+          <button class="menu-filter-btn" data-filter="dessert" type="button">حلويات</button>
+        </div>
 
-        <!-- إسبريسو -->
-        <div class="col-sm-6 col-lg-4 menu-item" data-category="hot">
-          <div class="product-card">
-            <div class="product-thumb">
-              <img src="https://images.pexels.com/photos/9050518/pexels-photo-9050518.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=500" alt="إسبريسو" loading="lazy">
-            </div>
-            <div class="product-body">
-              <h3 class="product-name">إسبريسو</h3>
-              <p class="product-desc">جرعة قهوة مركزة وغنية بنكهة محمصة عميقة.</p>
-              <div class="product-footer">
-                <span class="product-price">14 ر.س</span>
-                <button class="btn-order" data-product="إسبريسو">اطلب الآن</button>
+        <div class="row g-4" id="menuGrid">
+          <div class="col-sm-6 col-lg-4 menu-item" data-category="hot">
+            <article class="product-card">
+              <div class="product-thumb">
+                <img src="https://images.pexels.com/photos/9050518/pexels-photo-9050518.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=500" alt="إسبريسو" loading="lazy">
               </div>
-            </div>
+              <div class="product-body">
+                <h3 class="product-name">إسبريسو</h3>
+                <p class="product-desc">جرعة قهوة مركزة وغنية بنكهة محمصة عميقة.</p>
+                <div class="product-footer">
+                  <span class="product-price">14 ر.س</span>
+                  <button class="btn-order" type="button" data-product="إسبريسو">اطلب الآن</button>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-sm-6 col-lg-4 menu-item" data-category="hot">
+            <article class="product-card">
+              <div class="product-thumb">
+                <img src="https://images.pexels.com/photos/186857/pexels-photo-186857.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=500" alt="كابتشينو" loading="lazy">
+              </div>
+              <div class="product-body">
+                <h3 class="product-name">كابتشينو</h3>
+                <p class="product-desc">إسبريسو مع رغوة حليب كثيفة وناعمة القوام.</p>
+                <div class="product-footer">
+                  <span class="product-price">18 ر.س</span>
+                  <button class="btn-order" type="button" data-product="كابتشينو">اطلب الآن</button>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-sm-6 col-lg-4 menu-item" data-category="hot">
+            <article class="product-card">
+              <div class="product-thumb">
+                <span class="product-badge">الأكثر طلبًا</span>
+                <img src="https://images.pexels.com/photos/302900/pexels-photo-302900.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=500" alt="لاتيه" loading="lazy">
+              </div>
+              <div class="product-body">
+                <h3 class="product-name">لاتيه</h3>
+                <p class="product-desc">مزيج متوازن من الإسبريسو والحليب المخفوق برفق.</p>
+                <div class="product-footer">
+                  <span class="product-price">19 ر.س</span>
+                  <button class="btn-order" type="button" data-product="لاتيه">اطلب الآن</button>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-sm-6 col-lg-4 menu-item" data-category="hot">
+            <article class="product-card">
+              <div class="product-thumb">
+                <img src="https://images.pexels.com/photos/28867029/pexels-photo-28867029.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=500" alt="قهوة تركية" loading="lazy">
+              </div>
+              <div class="product-body">
+                <h3 class="product-name">قهوة تركية</h3>
+                <p class="product-desc">قهوة تقليدية مطحونة ناعمًا وتُقدّم بالطريقة الأصيلة.</p>
+                <div class="product-footer">
+                  <span class="product-price">16 ر.س</span>
+                  <button class="btn-order" type="button" data-product="قهوة تركية">اطلب الآن</button>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-sm-6 col-lg-4 menu-item" data-category="cold">
+            <article class="product-card">
+              <div class="product-thumb">
+                <img src="https://images.pexels.com/photos/11136849/pexels-photo-11136849.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=500" alt="آيس لاتيه" loading="lazy">
+              </div>
+              <div class="product-body">
+                <h3 class="product-name">آيس لاتيه</h3>
+                <p class="product-desc">لاتيه بارد ومنعش يقدّم مع مكعبات الثلج.</p>
+                <div class="product-footer">
+                  <span class="product-price">21 ر.س</span>
+                  <button class="btn-order" type="button" data-product="آيس لاتيه">اطلب الآن</button>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-sm-6 col-lg-4 menu-item" data-category="cold">
+            <article class="product-card">
+              <div class="product-thumb">
+                <span class="product-badge">توقيع الكافيه</span>
+                <img src="https://images.pexels.com/photos/10738363/pexels-photo-10738363.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=500" alt="كولد برو" loading="lazy">
+              </div>
+              <div class="product-body">
+                <h3 class="product-name">كولد برو</h3>
+                <p class="product-desc">قهوة مخمّرة ببرودة لساعات طويلة، نعومة بلا مرارة.</p>
+                <div class="product-footer">
+                  <span class="product-price">22 ر.س</span>
+                  <button class="btn-order" type="button" data-product="كولد برو">اطلب الآن</button>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-sm-6 col-lg-4 menu-item" data-category="cold">
+            <article class="product-card">
+              <div class="product-thumb">
+                <img src="https://images.pexels.com/photos/4790062/pexels-photo-4790062.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=500" alt="موخا مثلج" loading="lazy">
+              </div>
+              <div class="product-body">
+                <h3 class="product-name">موخا مثلج</h3>
+                <p class="product-desc">مزيج من الشوكولاتة والإسبريسو مع الحليب البارد.</p>
+                <div class="product-footer">
+                  <span class="product-price">23 ر.س</span>
+                  <button class="btn-order" type="button" data-product="موخا مثلج">اطلب الآن</button>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-sm-6 col-lg-4 menu-item" data-category="cold">
+            <article class="product-card">
+              <div class="product-thumb">
+                <img src="https://images.pexels.com/photos/32972501/pexels-photo-32972501.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=500" alt="شاي أخضر مثلج" loading="lazy">
+              </div>
+              <div class="product-body">
+                <h3 class="product-name">شاي أخضر مثلج</h3>
+                <p class="product-desc">شاي أخضر منعش مع لمسة نعناع طازج.</p>
+                <div class="product-footer">
+                  <span class="product-price">17 ر.س</span>
+                  <button class="btn-order" type="button" data-product="شاي أخضر مثلج">اطلب الآن</button>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-sm-6 col-lg-4 menu-item" data-category="dessert">
+            <article class="product-card">
+              <div class="product-thumb">
+                <img src="https://images.pexels.com/photos/28895984/pexels-photo-28895984.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=500" alt="تشيز كيك" loading="lazy">
+              </div>
+              <div class="product-body">
+                <h3 class="product-name">تشيز كيك</h3>
+                <p class="product-desc">قطعة كريمية غنية بقاعدة بسكويت مقرمشة.</p>
+                <div class="product-footer">
+                  <span class="product-price">24 ر.س</span>
+                  <button class="btn-order" type="button" data-product="تشيز كيك">اطلب الآن</button>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-sm-6 col-lg-4 menu-item" data-category="dessert">
+            <article class="product-card">
+              <div class="product-thumb">
+                <span class="product-badge">حلى اليوم</span>
+                <img src="https://images.pexels.com/photos/14766327/pexels-photo-14766327.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=500" alt="تيراميسو" loading="lazy">
+              </div>
+              <div class="product-body">
+                <h3 class="product-name">تيراميسو</h3>
+                <p class="product-desc">حلى إيطالي طبقات بنكهة القهوة والكريمة الناعمة.</p>
+                <div class="product-footer">
+                  <span class="product-price">26 ر.س</span>
+                  <button class="btn-order" type="button" data-product="تيراميسو">اطلب الآن</button>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-sm-6 col-lg-4 menu-item" data-category="dessert">
+            <article class="product-card">
+              <div class="product-thumb">
+                <img src="https://images.pexels.com/photos/14133096/pexels-photo-14133096.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=500" alt="كوكيز بالشوكولاتة" loading="lazy">
+              </div>
+              <div class="product-body">
+                <h3 class="product-name">كوكيز بالشوكولاتة</h3>
+                <p class="product-desc">مقرمشة من الخارج وطرية من الداخل، تُخبز يوميًا.</p>
+                <div class="product-footer">
+                  <span class="product-price">12 ر.س</span>
+                  <button class="btn-order" type="button" data-product="كوكيز بالشوكولاتة">اطلب الآن</button>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <div class="col-sm-6 col-lg-4 menu-item" data-category="dessert">
+            <article class="product-card">
+              <div class="product-thumb">
+                <img src="https://images.pexels.com/photos/8105045/pexels-photo-8105045.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=500" alt="كرواسون بالزبدة" loading="lazy">
+              </div>
+              <div class="product-body">
+                <h3 class="product-name">كرواسون بالزبدة</h3>
+                <p class="product-desc">طبقات هشة من العجين المخبوز بالزبدة الفرنسية.</p>
+                <div class="product-footer">
+                  <span class="product-price">15 ر.س</span>
+                  <button class="btn-order" type="button" data-product="كرواسون بالزبدة">اطلب الآن</button>
+                </div>
+              </div>
+            </article>
           </div>
         </div>
 
-        <!-- كابتشينو -->
-        <div class="col-sm-6 col-lg-4 menu-item" data-category="hot">
-          <div class="product-card">
-            <div class="product-thumb">
-              <img src="https://images.pexels.com/photos/186857/pexels-photo-186857.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=500" alt="كابتشينو" loading="lazy">
-            </div>
-            <div class="product-body">
-              <h3 class="product-name">كابتشينو</h3>
-              <p class="product-desc">إسبريسو مع رغوة حليب كثيفة وناعمة القوام.</p>
-              <div class="product-footer">
-                <span class="product-price">18 ر.س</span>
-                <button class="btn-order" data-product="كابتشينو">اطلب الآن</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- لاتيه -->
-        <div class="col-sm-6 col-lg-4 menu-item" data-category="hot">
-          <div class="product-card">
-            <div class="product-thumb">
-              <img src="https://images.pexels.com/photos/302900/pexels-photo-302900.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=500" alt="لاتيه" loading="lazy">
-            </div>
-            <div class="product-body">
-              <h3 class="product-name">لاتيه</h3>
-              <p class="product-desc">مزيج متوازن من الإسبريسو والحليب المخفوق برفق.</p>
-              <div class="product-footer">
-                <span class="product-price">19 ر.س</span>
-                <button class="btn-order" data-product="لاتيه">اطلب الآن</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- قهوة تركية -->
-        <div class="col-sm-6 col-lg-4 menu-item" data-category="hot">
-          <div class="product-card">
-            <div class="product-thumb">
-              <img src="https://images.pexels.com/photos/28867029/pexels-photo-28867029.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=500" alt="قهوة تركية" loading="lazy">
-            </div>
-            <div class="product-body">
-              <h3 class="product-name">قهوة تركية</h3>
-              <p class="product-desc">قهوة تقليدية مطحونة ناعمًا وتُقدّم بالطريقة الأصيلة.</p>
-              <div class="product-footer">
-                <span class="product-price">16 ر.س</span>
-                <button class="btn-order" data-product="قهوة تركية">اطلب الآن</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- آيس لاتيه -->
-        <div class="col-sm-6 col-lg-4 menu-item" data-category="cold">
-          <div class="product-card">
-            <div class="product-thumb">
-              <img src="https://images.pexels.com/photos/11136849/pexels-photo-11136849.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=500" alt="آيس لاتيه" loading="lazy">
-            </div>
-            <div class="product-body">
-              <h3 class="product-name">آيس لاتيه</h3>
-              <p class="product-desc">لاتيه بارد ومنعش يقدّم مع مكعبات الثلج.</p>
-              <div class="product-footer">
-                <span class="product-price">21 ر.س</span>
-                <button class="btn-order" data-product="آيس لاتيه">اطلب الآن</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- كولد برو -->
-        <div class="col-sm-6 col-lg-4 menu-item" data-category="cold">
-          <div class="product-card">
-            <div class="product-thumb">
-              <img src="https://images.pexels.com/photos/10738363/pexels-photo-10738363.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=500" alt="كولد برو" loading="lazy">
-            </div>
-            <div class="product-body">
-              <h3 class="product-name">كولد برو</h3>
-              <p class="product-desc">قهوة مخمّرة ببرودة لساعات طويلة، نعومة بلا مرارة.</p>
-              <div class="product-footer">
-                <span class="product-price">22 ر.س</span>
-                <button class="btn-order" data-product="كولد برو">اطلب الآن</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- موخا مثلج -->
-        <div class="col-sm-6 col-lg-4 menu-item" data-category="cold">
-          <div class="product-card">
-            <div class="product-thumb">
-              <img src="https://images.pexels.com/photos/4790062/pexels-photo-4790062.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=500" alt="موخا مثلج" loading="lazy">
-            </div>
-            <div class="product-body">
-              <h3 class="product-name">موخا مثلج</h3>
-              <p class="product-desc">مزيج من الشوكولاتة والإسبريسو مع الحليب البارد.</p>
-              <div class="product-footer">
-                <span class="product-price">23 ر.س</span>
-                <button class="btn-order" data-product="موخا مثلج">اطلب الآن</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- شاي أخضر مثلج -->
-        <div class="col-sm-6 col-lg-4 menu-item" data-category="cold">
-          <div class="product-card">
-            <div class="product-thumb">
-              <img src="https://images.pexels.com/photos/32972501/pexels-photo-32972501.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=500" alt="شاي أخضر مثلج" loading="lazy">
-            </div>
-            <div class="product-body">
-              <h3 class="product-name">شاي أخضر مثلج</h3>
-              <p class="product-desc">شاي أخضر منعش مع لمسة نعناع طازج.</p>
-              <div class="product-footer">
-                <span class="product-price">17 ر.س</span>
-                <button class="btn-order" data-product="شاي أخضر مثلج">اطلب الآن</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- تشيز كيك -->
-        <div class="col-sm-6 col-lg-4 menu-item" data-category="dessert">
-          <div class="product-card">
-            <div class="product-thumb">
-              <img src="https://images.pexels.com/photos/28895984/pexels-photo-28895984.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=500" alt="تشيز كيك" loading="lazy">
-            </div>
-            <div class="product-body">
-              <h3 class="product-name">تشيز كيك</h3>
-              <p class="product-desc">قطعة كريمية غنية بقاعدة بسكويت مقرمشة.</p>
-              <div class="product-footer">
-                <span class="product-price">24 ر.س</span>
-                <button class="btn-order" data-product="تشيز كيك">اطلب الآن</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- تيراميسو -->
-        <div class="col-sm-6 col-lg-4 menu-item" data-category="dessert">
-          <div class="product-card">
-            <div class="product-thumb">
-              <img src="https://images.pexels.com/photos/14766327/pexels-photo-14766327.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=500" alt="تيراميسو" loading="lazy">
-            </div>
-            <div class="product-body">
-              <h3 class="product-name">تيراميسو</h3>
-              <p class="product-desc">حلى إيطالي طبقات بنكهة القهوة والكريمة الناعمة.</p>
-              <div class="product-footer">
-                <span class="product-price">26 ر.س</span>
-                <button class="btn-order" data-product="تيراميسو">اطلب الآن</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- كوكيز -->
-        <div class="col-sm-6 col-lg-4 menu-item" data-category="dessert">
-          <div class="product-card">
-            <div class="product-thumb">
-              <img src="https://images.pexels.com/photos/14133096/pexels-photo-14133096.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=500" alt="كوكيز بالشوكولاتة" loading="lazy">
-            </div>
-            <div class="product-body">
-              <h3 class="product-name">كوكيز بالشوكولاتة</h3>
-              <p class="product-desc">مقرمشة من الخارج وطرية من الداخل، تُخبز يوميًا.</p>
-              <div class="product-footer">
-                <span class="product-price">12 ر.س</span>
-                <button class="btn-order" data-product="كوكيز بالشوكولاتة">اطلب الآن</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- كرواسون -->
-        <div class="col-sm-6 col-lg-4 menu-item" data-category="dessert">
-          <div class="product-card">
-            <div class="product-thumb">
-              <img src="https://images.pexels.com/photos/8105045/pexels-photo-8105045.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=500" alt="كرواسون بالزبدة" loading="lazy">
-            </div>
-            <div class="product-body">
-              <h3 class="product-name">كرواسون بالزبدة</h3>
-              <p class="product-desc">طبقات هشة من العجين المخبوز بالزبدة الفرنسية.</p>
-              <div class="product-footer">
-                <span class="product-price">15 ر.س</span>
-                <button class="btn-order" data-product="كرواسون بالزبدة">اطلب الآن</button>
-              </div>
-            </div>
-          </div>
-        </div>
-
+        <p class="text-center text-muted-custom mt-5 d-none" id="noResultsMsg">
+          لا توجد عناصر ضمن هذا التصنيف حاليًا.
+        </p>
       </div>
+    </section>
+  </main>
 
-      <!-- رسالة تظهر عند عدم وجود نتائج للتصفية -->
-      <p class="text-center text-muted-custom mt-5 d-none" id="noResultsMsg">
-        لا توجد عناصر ضمن هذا التصنيف حاليًا.
-      </p>
-
-    </div>
-  </section>
-
-  <!-- ===================== التذييل (Footer) ===================== -->
   <footer class="site-footer">
     <div class="container">
       <div class="row g-4">
-
         <div class="col-lg-4">
-          <div class="brand-logo mb-3" style="color:#FFF6EA;">
-            <i class="bi bi-cup-hot-fill brand-icon"></i>
+          <div class="brand-logo footer-brand mb-3">
+            <span class="brand-mark"><i class="bi bi-cup-hot-fill"></i></span>
             قهوتنا
           </div>
-          <p class="text-muted-custom" style="color:#C6B7A6;">
-            وجهتك اليومية لفنجان قهوة أصيل، في أجواء دافئة تجمعك بمن تحب.
-          </p>
+          <p class="footer-copy">وجهتك اليومية لفنجان قهوة أصيل، في أجواء دافئة تجمعك بمن تحب.</p>
           <div class="d-flex gap-2 mt-3">
             <a href="#" class="social-icon" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
             <a href="#" class="social-icon" aria-label="Twitter / X"><i class="bi bi-twitter-x"></i></a>
@@ -316,7 +298,6 @@
             <a href="#" class="social-icon" aria-label="WhatsApp"><i class="bi bi-whatsapp"></i></a>
           </div>
         </div>
-
         <div class="col-lg-2 col-md-4">
           <h6 class="footer-title">روابط سريعة</h6>
           <a href="index.html" class="footer-link">الرئيسية</a>
@@ -324,42 +305,34 @@
           <a href="menu.html" class="footer-link">القائمة</a>
           <a href="index.html#contact" class="footer-link">تواصل معنا</a>
         </div>
-
         <div class="col-lg-3 col-md-4">
           <h6 class="footer-title">ساعات العمل</h6>
-          <p class="footer-link mb-1">السبت - الخميس: 7ص - 12م</p>
-          <p class="footer-link">الجمعة: 2ظ - 12م</p>
+          <p class="footer-link mb-1">السبت – الخميس: 7ص – 12م</p>
+          <p class="footer-link">الجمعة: 2ظ – 12م</p>
         </div>
-
         <div class="col-lg-3 col-md-4">
           <h6 class="footer-title">تواصل معنا</h6>
           <p class="footer-link mb-1"><i class="bi bi-geo-alt ms-1"></i> حي الروضة، الرياض</p>
           <p class="footer-link mb-1" dir="ltr"><i class="bi bi-telephone ms-1"></i> +966 50 123 4567</p>
           <p class="footer-link" dir="ltr"><i class="bi bi-envelope ms-1"></i> hello@qahwatuna.sa</p>
         </div>
-
       </div>
-
       <div class="footer-bottom text-center">
         &copy; <span id="currentYear"></span> قهوتنا. جميع الحقوق محفوظة.
       </div>
     </div>
   </footer>
 
-  <!-- إشعار تأكيد الطلب -->
-  <div class="toast-custom" id="orderToast">
+  <div class="toast-custom" id="orderToast" role="status" aria-live="polite">
     <i class="bi bi-check-circle-fill ms-1"></i>
     <span id="orderToastText">تمت إضافة الطلب بنجاح</span>
   </div>
 
-  <!-- زر العودة لأعلى الصفحة -->
   <button id="scrollTopBtn" class="scroll-top-btn" aria-label="العودة لأعلى الصفحة">
     <i class="bi bi-arrow-up"></i>
   </button>
 
-  <!-- مكتبة Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- ملف الجافاسكريبت الخاص بالموقع -->
   <script src="script.js"></script>
 </body>
 </html>
